@@ -21,9 +21,8 @@ class SideMenu extends Component {
     return (
       <ListGroupItem
         key={key}
-        tag='a'
+        tag='button'
         action
-        href='#'
         active={key === this.state.selectedMenuKey}
         onClick={() => this.handleMenuClick(item)}
       >
