@@ -33,7 +33,9 @@ class SideMenu extends Component {
 
   render() {
     return (
-      <ListGroup>{this.state.menu.map(m => this.createMenuItem(m))}</ListGroup>
+      <ListGroup flush>
+        {this.state.menu.map(m => this.createMenuItem(m))}
+      </ListGroup>
     );
   }
 }
