@@ -14,12 +14,13 @@ class SideMenu extends Component {
   handleMenuClick = key => this.setState({ selectedMenuKey: key });
 
   createMenuItem = item => {
-    const { label, key } = item || {};
+    const { to, label, key } = item || {};
     return (
       <ListGroupItem
         key={key}
         tag='a'
         action
+        href='#'
         active={key === this.state.selectedMenuKey}
         onClick={() => this.handleMenuClick(key)}
       >
