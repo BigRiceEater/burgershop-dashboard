@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import history from './../util/history';
 import { Container, Row, Col } from 'reactstrap';
 
-import SideMenu from './../components/navigation/menu/SideMenu';
+import SideMenu from './../components/menu/SideMenu';
 
 class MainLayout extends Component {
   state = {};
   render() {
     return (
-      <Container fluid style={{ backgroundColor: 'lightgreen' }}>
-        <Router>
+      <Container fluid>
+        <Router history={history}>
           <Row>
-            <Col sm='4' style={{ minHeight: '100vh', padding: '0px' }}>
+            <Col sm='2' style={{ minHeight: '100vh', padding: '0px' }}>
               <SideMenu />
             </Col>
-            <Col sm='8'>{this.props.children}</Col>
+            <Col sm='10'>{this.props.children}</Col>
           </Row>
         </Router>
       </Container>

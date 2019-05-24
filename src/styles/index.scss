@@ -1,2 +1,6 @@
 @import 'theme';
 @import '~bootstrap/scss/bootstrap';
+
+button:focus {
+  outline: none;
+}
