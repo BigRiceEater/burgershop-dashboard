@@ -10,8 +10,8 @@ class Menu extends Component {
       { to: '/orders', label: 'Orders', key: 'orders' },
       { to: '/stocklist', label: 'Stock List', key: 'stock' },
       { to: '/foodmenu', label: 'Food Menu', key: 'foodmenu' },
-      { to: '/users', label: 'User Management', key: 'users' },
-      { to: '/crm', label: 'Customer Relation Management', key: 'crm' }
+      { to: '/users', label: 'Users', key: 'users' },
+      { to: '/crm', label: 'CRM', key: 'crm' }
     ]
   };
 
@@ -24,6 +24,8 @@ class Menu extends Component {
     const { label, key } = item || {};
     return (
       <ListGroupItem
+        style={styles.menuItem}
+        color='primary'
         key={key}
         tag='button'
         action
@@ -36,11 +38,24 @@ class Menu extends Component {
 
   render() {
     return (
-      <ListGroup flush>
-        {this.state.menu.map((m) => this.createMenuItem(m))}
-      </ListGroup>
+      <aside>
+        <ListGroup flush style={styles.menu}>
+          {this.state.menu.map((m) => this.createMenuItem(m))}
+        </ListGroup>
+      </aside>
     );
   }
 }
+
+const styles = {
+  menu: {
+    height: '100vh',
+    backgroundColor: 'gray'
+  },
+  menuItem: {
+    padding: '10px',
+    fontSize: '0.8em'
+  }
+};
 
 export default Menu;
