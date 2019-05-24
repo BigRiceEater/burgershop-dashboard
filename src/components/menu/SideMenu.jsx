@@ -1,27 +1,37 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, NavItem } from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class SideMenu extends Component {
   state = {
-    menu: [{ to: '/', label: 'Home' }, { to: '/about', label: 'About' }]
+    selectedMenuKey: 'home',
+    menu: [
+      { to: '/', label: 'Home', key: 'home' },
+      { to: '/about', label: 'About', key: 'about' }
+    ]
   };
 
-  createMenuItem = ({ to, label }) => (
-    <NavItem key={label}>
-      <Link to={to}>
-        <div style={{ width: '100%', borderBottom: '1px black solid' }}>
-          {label}
-        </div>
-      </Link>
-    </NavItem>
-  );
+  handleMenuClick = key => this.setState({ selectedMenuKey: key });
+
+  createMenuItem = item => {
+    const { label, key } = item || {};
+    return (
+      <ListGroupItem
+        key={key}
+        tag='a'
+        action
+        active={key === this.state.selectedMenuKey}
+        onClick={() => this.handleMenuClick(key)}
+      >
+        {/* <Link to={to}>{label}</Link> */}
+        {label}
+      </ListGroupItem>
+    );
+  };
 
   render() {
     return (
-      <Nav vertical pills style={{ backgroundColor: 'lightcoral' }}>
-        {this.state.menu.map((m) => this.createMenuItem(m))}
-      </Nav>
+      <ListGroup>{this.state.menu.map(m => this.createMenuItem(m))}</ListGroup>
     );
   }
 }
