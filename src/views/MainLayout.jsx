@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import history from './../util/history';
 import { Container, Row, Col } from 'reactstrap';
 
-import SideMenu from './../components/menu/SideMenu';
+import Menu from './../components/menu.jsx';
 
 class MainLayout extends Component {
   state = {};
@@ -13,7 +13,7 @@ class MainLayout extends Component {
         <Router history={history}>
           <Row>
             <Col sm='2' style={{ minHeight: '100vh', padding: '0px' }}>
-              <SideMenu />
+              <Menu />
             </Col>
             <Col sm='10'>{this.props.children}</Col>
           </Row>

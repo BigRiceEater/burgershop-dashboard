@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import history from './../../util/history';
+import history from '../util/history';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
-class SideMenu extends Component {
+class Menu extends Component {
   state = {
     selectedMenuKey: 'home',
     menu: [
@@ -20,7 +20,7 @@ class SideMenu extends Component {
     history.push(to);
   };
 
-  createMenuItem = item => {
+  createMenuItem = (item) => {
     const { label, key } = item || {};
     return (
       <ListGroupItem
@@ -28,8 +28,7 @@ class SideMenu extends Component {
         tag='button'
         action
         active={key === this.state.selectedMenuKey}
-        onClick={() => this.handleMenuClick(item)}
-      >
+        onClick={() => this.handleMenuClick(item)}>
         {label}
       </ListGroupItem>
     );
@@ -38,10 +37,10 @@ class SideMenu extends Component {
   render() {
     return (
       <ListGroup flush>
-        {this.state.menu.map(m => this.createMenuItem(m))}
+        {this.state.menu.map((m) => this.createMenuItem(m))}
       </ListGroup>
     );
   }
 }
 
-export default SideMenu;
+export default Menu;
