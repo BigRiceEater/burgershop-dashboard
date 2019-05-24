@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
-import SideMenu from './../components/navigation/menu/SideMenu';
+import SideMenu from './../components/menu/SideMenu';
 
 class MainLayout extends Component {
   state = {};
