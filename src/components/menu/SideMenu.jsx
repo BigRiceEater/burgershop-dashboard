@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import history from './../../util/history';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class SideMenu extends Component {
@@ -11,10 +11,13 @@ class SideMenu extends Component {
     ]
   };
 
-  handleMenuClick = key => this.setState({ selectedMenuKey: key });
+  handleMenuClick = ({ key, to }) => {
+    this.setState({ selectedMenuKey: key });
+    history.push(to);
+  };
 
   createMenuItem = item => {
-    const { to, label, key } = item || {};
+    const { label, key } = item || {};
     return (
       <ListGroupItem
         key={key}
@@ -22,9 +25,8 @@ class SideMenu extends Component {
         action
         href='#'
         active={key === this.state.selectedMenuKey}
-        onClick={() => this.handleMenuClick(key)}
+        onClick={() => this.handleMenuClick(item)}
       >
-        {/* <Link to={to}>{label}</Link> */}
         {label}
       </ListGroupItem>
     );
