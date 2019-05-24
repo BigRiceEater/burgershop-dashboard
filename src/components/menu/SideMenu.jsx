@@ -7,7 +7,11 @@ class SideMenu extends Component {
     selectedMenuKey: 'home',
     menu: [
       { to: '/', label: 'Home', key: 'home' },
-      { to: '/about', label: 'About', key: 'about' }
+      { to: '/orders', label: 'Orders', key: 'orders' },
+      { to: '/stocklist', label: 'Stock List', key: 'stock' },
+      { to: '/foodmenu', label: 'Food Menu', key: 'foodmenu' },
+      { to: '/users', label: 'User Management', key: 'users' },
+      { to: '/crm', label: 'Customer Relation Management', key: 'crm' }
     ]
   };
 
