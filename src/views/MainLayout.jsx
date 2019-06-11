@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import history from './../util/history';
+import history from 'util/history';
 import { Container, Row, Col } from 'reactstrap';
 
-import Menu from './../components/menu/menu.jsx';
+import Menu from 'components/menu/menu.jsx';
 
 class MainLayout extends Component {
   state = {};

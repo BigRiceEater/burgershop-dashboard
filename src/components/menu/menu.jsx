@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import history from '../../util/history';
+import history from 'util/history';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import './menu.scss'
 
