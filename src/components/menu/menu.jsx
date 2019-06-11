@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import history from 'util/history';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import './menu.scss'
+import './menu.scss';
 
 class Menu extends Component {
   state = {
@@ -21,7 +21,7 @@ class Menu extends Component {
     history.push(to);
   };
 
-  createMenuItem = (item) => {
+  createMenuItem = item => {
     const { label, key } = item || {};
     return (
       <ListGroupItem
@@ -31,7 +31,8 @@ class Menu extends Component {
         tag='button'
         action
         active={key === this.state.selectedMenuKey}
-        onClick={() => this.handleMenuClick(item)}>
+        onClick={() => this.handleMenuClick(item)}
+      >
         {label}
       </ListGroupItem>
     );
@@ -41,7 +42,7 @@ class Menu extends Component {
     return (
       <aside>
         <ListGroup flush className='burgershop-menu'>
-          {this.state.menu.map((m) => this.createMenuItem(m))}
+          {this.state.menu.map(m => this.createMenuItem(m))}
         </ListGroup>
       </aside>
     );
@@ -49,7 +50,6 @@ class Menu extends Component {
 }
 
 const styles = {
-
   menuItem: {
     padding: '10px',
     fontSize: '0.8em'
