@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import history from '../util/history';
+import history from '../../util/history';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import './menu.scss'
 
 class Menu extends Component {
   state = {
@@ -39,7 +40,7 @@ class Menu extends Component {
   render() {
     return (
       <aside>
-        <ListGroup flush style={styles.menu}>
+        <ListGroup flush className='burgershop-menu'>
           {this.state.menu.map((m) => this.createMenuItem(m))}
         </ListGroup>
       </aside>
@@ -48,10 +49,7 @@ class Menu extends Component {
 }
 
 const styles = {
-  menu: {
-    height: '100vh',
-    backgroundColor: 'gray'
-  },
+
   menuItem: {
     padding: '10px',
     fontSize: '0.8em'
