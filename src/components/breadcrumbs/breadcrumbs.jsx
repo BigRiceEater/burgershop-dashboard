@@ -10,8 +10,12 @@ export default class BreadCrumbs extends Component {
     const { crumbs } = this.props;
     return (
       <Breadcrumb className='mb-3'>
-        {crumbs.map(crumb =>
-          crumb.to ? <LinkCrumb crumb={crumb} /> : <PlainCrumb crumb={crumb} />
+        {crumbs.map((crumb, idx) =>
+          crumb.to ? (
+            <LinkCrumb key={idx} crumb={crumb} />
+          ) : (
+            <PlainCrumb key={idx} crumb={crumb} />
+          )
         )}
       </Breadcrumb>
     );
