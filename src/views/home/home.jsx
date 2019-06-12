@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
+import UserDetails from 'components/user/user-details.jsx';
+
 class HomeView extends Component {
   render() {
-    return <div>This is Home</div>;
+    return (
+      <React.Fragment>
+        <UserDetails />
+      </React.Fragment>
+    );
   }
 }
 
