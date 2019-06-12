@@ -1,8 +1,8 @@
 import React from 'react';
-import MainLayout from 'components/layout/MainLayout';
+import MainRouter from 'views/router.jsx';
 
 function App() {
-  return <MainLayout />;
+  return <MainRouter />;
 }
 
 export default App;
