@@ -12,9 +12,7 @@ class MainLayout extends Component {
     const {
       location: { pathname = '' }
     } = this.props;
-    const crumbs = CrumbMaker.fromRelativePath(pathname);
-    console.log('crumbs', crumbs);
-    return crumbs;
+    return CrumbMaker.fromRelativePath(pathname);
   };
 
   render() {

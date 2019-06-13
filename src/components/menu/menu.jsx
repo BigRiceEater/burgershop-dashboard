@@ -8,8 +8,6 @@ class Menu extends Component {
   constructor(props) {
     super(props);
 
-    console.log(Object.keys(SiteRoute));
-
     this.state = {
       selectedMenuKey: SiteRoute.home.key,
       menu: Object.keys(SiteRoute).map(menuItem => {
