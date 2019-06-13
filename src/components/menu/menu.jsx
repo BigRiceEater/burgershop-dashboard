@@ -11,7 +11,7 @@ class Menu extends Component {
       { to: '/orders', label: 'Orders', key: 'orders' },
       { to: '/stocklist', label: 'Stock List', key: 'stock' },
       { to: '/foodmenu', label: 'Food Menu', key: 'foodmenu' },
-      { to: '/users', label: 'Users', key: 'users' },
+      { to: '/staff', label: 'Staff', key: 'staff' },
       { to: '/crm', label: 'CRM', key: 'crm' }
     ]
   };
