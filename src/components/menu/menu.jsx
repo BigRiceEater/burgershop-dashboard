@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import history from 'util/history';
+import { SiteRoute } from 'util/site-route';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import './menu.scss';
 
 class Menu extends Component {
-  state = {
-    selectedMenuKey: 'home',
-    menu: [
-      { to: '/', label: 'Home', key: 'home' },
-      { to: '/orders', label: 'Orders', key: 'orders' },
-      { to: '/stocklist', label: 'Stock List', key: 'stock' },
-      { to: '/foodmenu', label: 'Food Menu', key: 'foodmenu' },
-      { to: '/staff', label: 'Staff', key: 'staff' },
-      { to: '/crm', label: 'CRM', key: 'crm' }
-    ]
-  };
+  constructor(props) {
+    super(props);
+
+    console.log(Object.keys(SiteRoute));
+
+    this.state = {
+      selectedMenuKey: SiteRoute.home.key,
+      menu: Object.keys(SiteRoute).map(menuItem => {
+        const { path, display, key } = SiteRoute[menuItem];
+        return { to: path, label: display, key };
+      })
+    };
+  }
 
   handleMenuClick = ({ key, to }) => {
     this.setState({ selectedMenuKey: key });
