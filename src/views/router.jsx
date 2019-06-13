@@ -14,8 +14,8 @@ export default class MainRouter extends Component {
       <Router history={history}>
         <MainLayout>
           <Switch>
-            <Route path={SiteRoute.home.path} component={Home} exact />
             <Route path={SiteRoute.staff.path} component={Staff} />
+            <Route component={Home} />
           </Switch>
         </MainLayout>
       </Router>
