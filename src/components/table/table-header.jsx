@@ -8,7 +8,7 @@ class TableHeader extends Component {
       <thead>
         <tr>
           {columns.map(({ label }) => (
-            <th>{label}</th>
+            <th key={label}>{label}</th>
           ))}
         </tr>
       </thead>
