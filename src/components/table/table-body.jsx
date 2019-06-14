@@ -2,26 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class TableBody extends Component {
+  createRow = row => (
+    <tr>
+      {row.map(value => (
+        <td>{value}</td>
+      ))}
+    </tr>
+  );
+
   render() {
     const { data } = this.props;
-    return (
-      <tbody>
-        {data.map(({ value }) => (
-          <tr>
-            <td>{value}</td>
-          </tr>
-        ))}
-      </tbody>
-    );
+    return <tbody>{data.map(row => this.createRow(row))}</tbody>;
   }
 }
 
 TableBody.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string
-    })
-  )
+  data: PropTypes.array
 };
 
 TableBody.defaultProps = {
