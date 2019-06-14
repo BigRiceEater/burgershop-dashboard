@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class TableBody extends Component {
-  createRow = row => (
-    <tr>
-      {row.map(value => (
+  handleRowClicked = datakey => {
+    const { onRowClicked } = this.props;
+    if (onRowClicked) {
+      onRowClicked(datakey);
+    }
+  };
+
+  createRow = ({ datakey, values = [] }) => (
+    <tr onClick={() => this.handleRowClicked(datakey)}>
+      {values.map(value => (
         <td>{value}</td>
       ))}
     </tr>
@@ -17,7 +24,13 @@ class TableBody extends Component {
 }
 
 TableBody.propTypes = {
-  data: PropTypes.array
+  onRowClicked: PropTypes.func,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      datakey: PropTypes.string.isRequired,
+      values: PropTypes.string.isRequired
+    })
+  )
 };
 
 TableBody.defaultProps = {

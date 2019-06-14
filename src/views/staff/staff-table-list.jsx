@@ -7,11 +7,26 @@ class StaffTableList extends Component {
   };
 
   getData = () => {
-    return [['12345', 'John Doe', 'Sales Assistant']];
+    return [
+      {
+        datakey: '1234',
+        values: ['12345', 'John Doe', 'Sales Assistant']
+      }
+    ];
+  };
+
+  handleRowClicked = datakey => {
+    alert(`You clicked on ${datakey}`);
   };
 
   render() {
-    return <TableList columns={this.getHeaders()} data={this.getData()} />;
+    return (
+      <TableList
+        columns={this.getHeaders()}
+        data={this.getData()}
+        onRowClicked={this.handleRowClicked}
+      />
+    );
   }
 }
 

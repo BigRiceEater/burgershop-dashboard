@@ -6,11 +6,10 @@ import TableBody from './table-body';
 
 class TableList extends Component {
   render() {
-    const { columns, data } = this.props;
     return (
       <Table>
-        <TableHeader columns={columns} />
-        <TableBody data={data} />
+        <TableHeader {...this.props} />
+        <TableBody {...this.props} />
       </Table>
     );
   }
