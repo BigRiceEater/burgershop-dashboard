@@ -10,9 +10,9 @@ class TableBody extends Component {
   };
 
   createRow = ({ datakey, values = [] }) => (
-    <tr onClick={() => this.handleRowClicked(datakey)}>
-      {values.map(value => (
-        <td>{value}</td>
+    <tr key={datakey} onClick={() => this.handleRowClicked(datakey)}>
+      {values.map((value, idx) => (
+        <td key={idx}>{value}</td>
       ))}
     </tr>
   );
