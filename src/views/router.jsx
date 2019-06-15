@@ -4,7 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from 'util/history';
 import { SiteRoute } from 'util/site-route';
 
-import MainLayout from 'components/layout/MainLayout';
+import MainLayout from 'components/layout/main-layout';
 import Home from 'views/home/home.jsx';
 import Staff from 'views/staff/staff.jsx';
 
