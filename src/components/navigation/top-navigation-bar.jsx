@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   NavbarBrand,
   Navbar,
+  NavbarToggler,
   Nav,
   NavItem,
   NavLink,
@@ -16,6 +17,7 @@ class TopNavigationBar extends Component {
     super(props);
 
     this.state = {
+      isOpen: false,
       selectedMenuKey: SiteRoute.home.key,
       menu: Object.keys(SiteRoute).map(menuItem => {
         const { path, display, key } = SiteRoute[menuItem];
@@ -34,7 +36,10 @@ class TopNavigationBar extends Component {
     return (
       <Navbar color='dark' dark expand='md'>
         <NavbarBrand>Hello</NavbarBrand>
-        <Collapse isOpen={true} navbar>
+        <NavbarToggler
+          onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+        />
+        <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
             {this.state.menu.map(m => (
               <NavItem key={m.key}>
