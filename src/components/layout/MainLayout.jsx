@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 import { CrumbMaker } from 'util/crumb-maker';
 
-import Menu from 'components/menu/menu.jsx';
+import TopNavigationBar from 'components/navigation/top-navigation-bar';
 import BreadCrumbs from 'components/breadcrumbs/breadcrumbs.jsx';
 
 class MainLayout extends Component {
@@ -17,19 +17,19 @@ class MainLayout extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col sm='2' style={{ minHeight: '100vh', padding: '0px' }}>
-            <Menu />
-          </Col>
-          <Col sm='10'>
-            <Container fluid className='my-5'>
-              <BreadCrumbs crumbs={this.getCrumbs()} />
-              {this.props.children}
-            </Container>
-          </Col>
-        </Row>
-      </Container>
+      <React.Fragment>
+        <TopNavigationBar />
+        <Container>
+          <Row>
+            <Col>
+              <Container fluid className='my-5'>
+                <BreadCrumbs crumbs={this.getCrumbs()} />
+                {this.props.children}
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </React.Fragment>
     );
   }
 }
