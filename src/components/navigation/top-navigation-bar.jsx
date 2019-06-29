@@ -9,6 +9,8 @@ import {
   Collapse
 } from 'reactstrap';
 
+import SiteIcon from 'components/icons/site-logo';
+
 import history from 'util/history';
 import { SiteRoute } from 'util/site-route';
 
@@ -35,7 +37,9 @@ class TopNavigationBar extends Component {
     /* NavBar is for responsive behaviour */
     return (
       <Navbar color='dark' dark expand='md'>
-        <NavbarBrand>Hello</NavbarBrand>
+        <NavbarBrand>
+          <SiteIcon />
+        </NavbarBrand>
         <NavbarToggler
           onClick={() => this.setState({ isOpen: !this.state.isOpen })}
         />
