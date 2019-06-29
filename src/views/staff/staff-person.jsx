@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class StaffPerson extends Component {
   render() {
@@ -7,7 +8,9 @@ class StaffPerson extends Component {
     return (
       <Container>
         <Row>
-          <Col>image</Col>
+          <Col>
+            <FontAwesomeIcon icon='user' />
+          </Col>
           <Col>{name}</Col>
         </Row>
       </Container>
