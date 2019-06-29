@@ -4,12 +4,7 @@ import StaffPerson from './staff-person.jsx';
 
 class StaffTableList extends Component {
   getHeaders = () => {
-    return [
-      { label: 'Name' },
-      { label: 'ID' },
-      { label: 'Employee' },
-      { label: 'Job Role' }
-    ];
+    return [{ label: 'Name' }, { label: 'ID' }, { label: 'Job Role' }];
   };
 
   getData = () => {
@@ -17,9 +12,14 @@ class StaffTableList extends Component {
       {
         datakey: '1234',
         values: [
-          { component: <StaffPerson data={{ name: 'John Doe', photo: '' }} /> },
+          {
+            component: (
+              <StaffPerson
+                data={{ name: 'John Doe', gender: 'M', photo: '' }}
+              />
+            )
+          },
           '12345',
-          'John Doe',
           'Sales Assistant'
         ]
       }
