@@ -9,13 +9,20 @@ class TableBody extends Component {
     }
   };
 
-  createRow = ({ datakey, values = [] }) => (
-    <tr key={datakey} onClick={() => this.handleRowClicked(datakey)}>
-      {values.map((value, idx) => (
-        <td key={idx}>{value}</td>
-      ))}
-    </tr>
-  );
+  createRow = ({ datakey, values = [] }) => {
+    return (
+      <tr key={datakey} onClick={() => this.handleRowClicked(datakey)}>
+        {values.map((value, idx) => {
+          const { component = undefined } = value;
+          if (component) {
+            return <td key={idx}>{component}</td>;
+          } else {
+            return <td key={idx}>{value}</td>;
+          }
+        })}
+      </tr>
+    );
+  };
 
   render() {
     const { data } = this.props;

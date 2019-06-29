@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import TableList from 'components/table/table-list';
+import StaffPerson from './staff-person.jsx';
 
 class StaffTableList extends Component {
   getHeaders = () => {
-    return [{ label: 'ID' }, { label: 'Employee' }, { label: 'Job Role' }];
+    return [
+      { label: 'Name' },
+      { label: 'ID' },
+      { label: 'Employee' },
+      { label: 'Job Role' }
+    ];
   };
 
   getData = () => {
     return [
       {
         datakey: '1234',
-        values: ['12345', 'John Doe', 'Sales Assistant']
+        values: [
+          { component: <StaffPerson data={{ name: 'John Doe', photo: '' }} /> },
+          '12345',
+          'John Doe',
+          'Sales Assistant'
+        ]
       }
     ];
   };
