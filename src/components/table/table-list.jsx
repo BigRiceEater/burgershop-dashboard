@@ -7,7 +7,7 @@ import TableBody from './table-body';
 class TableList extends Component {
   render() {
     return (
-      <Table hover>
+      <Table borderless hover>
         <TableHeader {...this.props} />
         <TableBody {...this.props} />
       </Table>
