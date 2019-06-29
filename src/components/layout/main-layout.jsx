@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { CrumbMaker } from 'util/crumb-maker';
 
 import TopNavigationBar from 'components/navigation/top-navigation-bar';
+import Footer from 'components/footer/footer';
 import BreadCrumbs from 'components/breadcrumbs/breadcrumbs.jsx';
 
 class MainLayout extends Component {
@@ -17,10 +18,10 @@ class MainLayout extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className='d-flex flex-column'>
         <TopNavigationBar />
         <Container>
-          <Row>
+          <Row style={{ minHeight: '90vh' }}>
             <Col>
               <Container fluid className='my-5'>
                 <BreadCrumbs crumbs={this.getCrumbs()} />
@@ -28,8 +29,13 @@ class MainLayout extends Component {
               </Container>
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <Footer />
+            </Col>
+          </Row>
         </Container>
-      </React.Fragment>
+      </div>
     );
   }
 }
