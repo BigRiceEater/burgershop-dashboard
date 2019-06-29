@@ -23,10 +23,10 @@ class MainLayout extends Component {
         <Container>
           <Row style={{ minHeight: '90vh' }}>
             <Col>
-              <Container fluid className='my-5'>
+              <div className='my-5'>
                 <BreadCrumbs crumbs={this.getCrumbs()} />
                 {this.props.children}
-              </Container>
+              </div>
             </Col>
           </Row>
           <Row>
