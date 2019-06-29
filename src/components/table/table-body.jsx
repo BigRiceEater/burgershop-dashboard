@@ -15,9 +15,17 @@ class TableBody extends Component {
         {values.map((value, idx) => {
           const { component = undefined } = value;
           if (component) {
-            return <td key={idx}>{component}</td>;
+            return (
+              <td className='align-middle' key={idx}>
+                {component}
+              </td>
+            );
           } else {
-            return <td key={idx}>{value}</td>;
+            return (
+              <td className='align-middle' key={idx}>
+                {value}
+              </td>
+            );
           }
         })}
       </tr>

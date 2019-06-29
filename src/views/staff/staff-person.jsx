@@ -7,10 +7,10 @@ class StaffPerson extends Component {
   render() {
     const { name } = this.props.data;
     return (
-      <div className='d-flex align-items-center'>
+      <span>
         <RandomUserIcon />
-        <div className='mx-3'>{name}</div>
-      </div>
+        <span className='mx-3'>{name}</span>
+      </span>
     );
   }
 }
