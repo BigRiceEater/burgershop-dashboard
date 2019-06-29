@@ -15,7 +15,7 @@ class StaffTableList extends Component {
           {
             component: (
               <StaffPerson
-                data={{ name: 'John Doe', gender: 'M', photo: '' }}
+                data={{ name: 'John Doe', gender: 'male', photo: '' }}
               />
             )
           },
